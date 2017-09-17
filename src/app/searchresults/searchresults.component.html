@@ -18,7 +18,7 @@
                         <div class='bar-title'>
                             <div class='inner'>
                                 <div class='pull-left custom-margin'>
-                                    <strong>1</strong> - <strong>12</strong> of <strong>48</strong> results for <strong>Hyderabad</strong> property <strong>For Sell</strong>
+                                    <strong>1</strong> - <strong>{{totalresults}}</strong> of <strong>{{location}}</strong> results for <strong></strong> property <strong>For Sell</strong>
                                 </div>
                                 <!-- <div class='pull-right results-per-page custom-margin'>
                                     <span class='text-line'>Results per page:</span>
@@ -55,17 +55,17 @@
                 </div>
             </div>
                 <div class='row'>
-                    <div class='span3 featured-item-wrapper'>
+                    <div class='span3 featured-item-wrapper'  *ngFor="let result of results;">
                         <div class='featured-item'>
                             <div class='top'>
                                 <div class='inner-border'>
                                     <div class='inner-padding'>
                                         <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
+                                            <img src="assets/images/photos/{{result.imageurl}}" alt="" />
+                                            <div class='banner'>For {{result.ptype}}</div>
+                                            <a [routerLink]="['/property', result.id]" class='figure-hover'>Zoom</a>
                                         </figure>
-                                        <h3><a href="property.html">Property</a></h3>
+                                        <h3><a [routerLink]="['/property', result.id]">{{result.ptitle}}</a></h3>
                                         <p>Hyderabad</p>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                             <div class='bottom'>
                                 <div class='inner-border'>
                                     <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
+                                        <p>{{result.bedrooms}} beds  +  {{result.bathrooms}} baths  +  {{result.yards}} sqft</p>
                                     </div>
                                 </div>
                             </div>
@@ -87,339 +87,16 @@
                             <button class='star active'>5 Star</button>
                         </div> -->
                         <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,499</div>
+                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>{{result.cost}}</div>
                             <!-- <div class='rate'>/month</div> -->
                         </div>
                     </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,499</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>11,000</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,40,099</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
+                    
+                    
+                    
                 </div>
-                <div class='row'>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,499</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>11,000</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,40,099</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class='row'>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,499</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>11,000</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                    <div class='span3 featured-item-wrapper'>
-                        <div class='featured-item'>
-                            <div class='top'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <figure>
-                                            <img src="assets/images/photos/4834194361_85d5c4a5e0_b.jpg" alt="" />
-                                            <div class='banner'>For Sale</div>
-                                            <a href="property.html" class='figure-hover'>Zoom</a>
-                                        </figure>
-                                        <h3><a href="property.html">Property</a></h3>
-                                        <p>Hyderabad</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class='bottom'>
-                                <div class='inner-border'>
-                                    <div class='inner-padding'>
-                                        <p>4 beds  +  2 baths  +  245 sqft</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class='star-rating'>
-                            <button class='star active'>1 Star</button>
-                            <button class='star active'>2 Star</button>
-                            <button class='star active'>3 Star</button>
-                            <button class='star active'>4 Star</button>
-                            <button class='star active'>5 Star</button>
-                        </div> -->
-                        <div class='price-wrapper'>
-                            <div class='price'><i class="fa fa-inr" aria-hidden="true"></i>1,40,099</div>
-                            <!-- <div class='rate'>/month</div> -->
-                        </div>
-                    </div>
-                </div>
+                
+                    
                 <div class="pagination">
                     <ul>
                         <li class='first-element'><a href="#">Prev</a></li>

@@ -14,7 +14,7 @@ const routes: Routes = [
     component: PropertydetailsComponent 
   },
   {
-    path: 'searchresults', 
+    path: 'searchresults/:location/:minPrice/:maxPrice', 
     component: SearchresultsComponent 
   },
   

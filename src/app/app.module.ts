@@ -16,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PropertydetailsComponent } from './propertydetails/propertydetails.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
-
+import { MessageService } from './shared.service';
+import { ReactiveFormsModule } from '@angular/forms'; 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true }); 
 
 @NgModule({
@@ -34,8 +35,9 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     FormsModule,
     HttpModule,
     rootRouting,
+    ReactiveFormsModule
   ],
-  providers: [PropertyService],
+  providers: [PropertyService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
